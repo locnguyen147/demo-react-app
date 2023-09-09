@@ -6,6 +6,7 @@ import {Box, Button, FormControl, MenuItem, Select} from '@mui/material';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import ButtonGroupAdd from '../../components/ButtonGroupAdd';
 import DeleteX from '../../assets/icons/deleteX.svg'
+import TableList from './table';
 
 /**
 * @author
@@ -23,6 +24,9 @@ export const Dashboard
 
     return (
       <div>
+        <Box>
+          sidebar
+        </Box>
         <AppBarHeader />
         <Box m={3}>
           <Box sx={{
@@ -144,6 +148,7 @@ export const Dashboard
             <img src={DeleteX} alt='' />
           </div>
         </Box>
+        <TableList />
       </div>
     )
 
