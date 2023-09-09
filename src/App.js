@@ -1,11 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import {LayoutMain} from './components/Layout/LayoutMain';
 import {Dashboard} from './pages/Dashboard';
-
+import Box from '@mui/material/Box';
 function App() {
   return (
     <div className="App">
-      <Dashboard />
+      <LayoutMain>
+        <Dashboard />
+      </LayoutMain>
+
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import {AppBarHeader} from '../../components/AppBar'
 import SearchIcon from '@mui/icons-material/Search';
 import {Search, SearchIconWrapper, StyledInputBase} from './style';
 import {Box, Button, FormControl, MenuItem, Select} from '@mui/material';
@@ -24,10 +23,6 @@ export const Dashboard
 
     return (
       <div>
-        <Box>
-          sidebar
-        </Box>
-        <AppBarHeader />
         <Box m={3}>
           <Box sx={{
             display: 'flex',

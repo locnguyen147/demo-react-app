@@ -16,9 +16,10 @@ import Menu from '@mui/icons-material/Menu';
 
 export const AppBarHeader
   = (props) => {
+    const {openSideBar, setOpenSideBar} = props
     return (
-      <Box sx={{flexGrow: 1}}>
-        <AppBar position="static">
+      <Box sx={{height: '58px'}}>
+        <AppBar position="static" sx={{height: '58px', color: 'black', backgroundColor:'white'}}>
           <Toolbar>
             <IconButton
               size="large"
@@ -26,13 +27,15 @@ export const AppBarHeader
               color="inherit"
               aria-label="menu"
               sx={{mr: 2}}
+              onClick={() => setOpenSideBar(!openSideBar)}
             >
               <Menu />
             </IconButton>
-            <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-              News
+            <Typography variant="h6" component="div"
+              sx={{fontWeight: '600', fontSize: '20px', color: '#0F1824'}}>
+              Danh sách phiếu xuất linh kiện dịch vụ
             </Typography>
-            <Button color="inherit">Login</Button>
+            {/* <Button color="inherit">Login</Button> */}
           </Toolbar>
         </AppBar>
       </Box>

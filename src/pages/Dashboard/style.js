@@ -34,12 +34,30 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     // transition: theme.transitions.create('width'),
-    width: '500px',
-    // [theme.breakpoints.up('sm')]: {
-    //   width: '12ch',
-    //   '&:focus': {
-    //     width: '20ch',
-    //   },
-    // },
+    // width: '500px',
+    [theme.breakpoints.up('sm')]: {
+      width: '12ch',
+      '&:focus': {
+        width: '20ch',
+      },
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '20',
+      '&:focus': {
+        width: '28ch',
+      },
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '30ch',
+      '&:focus': {
+        width: '38ch',
+      },
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: '48ch',
+      '&:focus': {
+        width: '60ch',
+      },
+    },
   },
 }));
