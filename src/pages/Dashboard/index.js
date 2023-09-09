@@ -1,11 +1,11 @@
 import React from 'react'
-import SearchIcon from '@mui/icons-material/Search';
-import {Search, SearchIconWrapper, StyledInputBase} from './style';
 import {Box, Button, FormControl, MenuItem, Select} from '@mui/material';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
-import ButtonGroupAdd from '../../components/ButtonGroupAdd';
+import {ButtonGroupAdd} from '../../components/ButtonGroupAdd';
 import DeleteX from '../../assets/icons/deleteX.svg'
 import TableList from './table';
+import {ModalAdd} from '../../components/Modal/ModalAdd/ModalAdd';
+import {SearchInputIcon} from '../../components/Search/Search';
 
 /**
 * @author
@@ -16,6 +16,7 @@ import TableList from './table';
 export const Dashboard
   = (props) => {
     const [needConfirm, setNeedConfirm] = React.useState('Cần xác nhận');
+    const [openModalAdd, setOpenModalAdd] = React.useState(false);
 
     const handleChange = (event) => {
       setNeedConfirm(event.target.value);
@@ -29,15 +30,7 @@ export const Dashboard
             alignItems: 'center',
             justifyContent: 'space-between'
           }}>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Tìm kiếm theo mã khách hàng, tên khách hàng và số điện thoại"
-                inputProps={{'aria-label': 'search'}}
-              />
-            </Search>
+            <SearchInputIcon titleLabel='Tìm kiếm theo mã khách hàng, tên khách hàng và số điện thoại'/>
             <Box
               sx={{
                 display: 'flex',
@@ -103,8 +96,9 @@ export const Dashboard
                 variant="primary" startIcon={<FilterAltOutlinedIcon color="primary" />}>
                 Bộ lọc
               </Button>
-
-              <ButtonGroupAdd />
+              <ButtonGroupAdd  
+              openAdd = {openModalAdd}
+              setOpenModalAdd = {setOpenModalAdd}/>
             </Box>
           </Box>
         </Box>
@@ -144,6 +138,11 @@ export const Dashboard
           </div>
         </Box>
         <TableList />
+
+        <ModalAdd 
+        open = {openModalAdd}
+        onClose = {() => setOpenModalAdd(false)}
+        />
       </div>
     )
 

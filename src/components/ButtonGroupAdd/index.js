@@ -12,13 +12,15 @@ import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
 
 const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'];
 
-export default function ButtonGroupAdd() {
+export const ButtonGroupAdd = (props) => {
+  const {openAdd, setOpenModalAdd} = props
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
   const handleClick = () => {
-    console.info(`You clicked ${options[selectedIndex]}`);
+    setOpenModalAdd(true)
+    // console.info(`You clicked ${options[selectedIndex]}`);
   };
 
   const handleMenuItemClick = (event, index) => {
