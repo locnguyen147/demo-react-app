@@ -17,7 +17,6 @@ import {DndContext} from '@dnd-kit/core';
 import {
   arrayMove,
   SortableContext,
-  sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import {SortableItems} from './SortableItems/SortableItems';
@@ -46,8 +45,10 @@ export const ModalAdd = (props) => {
   const [data, setData] = React.useState(listColumn)
 
   const handleDragEnd = (event) => {
-    console.log(event)
+    //console.log(event)
     const {active, over} = event
+
+    if(!over) return
     if(active.id !== over.id) {
       const oldIndex = data.findIndex(d => d.name === active.id)
       const newIndex = data.findIndex(d => d.name === over.id)
@@ -178,7 +179,7 @@ export const ModalAdd = (props) => {
                     <SortableContext items={columnIds} strategy={verticalListSortingStrategy}>
                       <Box>
                         {
-                          listColumn.map((item) => (
+                          data.map((item) => (
                             // <Box key={index}
                             //   display={'flex'} alignItems={'center'}
                             //   sx={{
@@ -197,7 +198,7 @@ export const ModalAdd = (props) => {
                             //     <ClearIcon />
                             //   </IconButton>
                             // </Box>
-                            <SortableItems key={item} id={item.name}/>
+                            <SortableItems key={item.name} id={item.name}/>
                           ))
                         }
                       </Box>

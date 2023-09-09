@@ -200,7 +200,7 @@ export default function TableList() {
               {visibleRows.map((row, index) => {
                 const isItemSelected = isSelected(row.name);
                 const labelId = `enhanced-table-checkbox-${index}`;
-
+                console.log(row);
                 return (
                   <TableRow
                     hover
@@ -208,7 +208,7 @@ export default function TableList() {
                     role="checkbox"
                     aria-checked={isItemSelected}
                     tabIndex={-1}
-                    key={row.name}
+                    key={row.id}
                     selected={isItemSelected}
                     sx={{cursor: 'pointer'}}
                   >

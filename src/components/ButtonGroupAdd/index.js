@@ -13,7 +13,7 @@ import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
 const options = ['Create a merge commit', 'Squash and merge', 'Rebase and merge'];
 
 export const ButtonGroupAdd = (props) => {
-  const {openAdd, setOpenModalAdd} = props
+  const { setOpenModalAdd} = props
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
