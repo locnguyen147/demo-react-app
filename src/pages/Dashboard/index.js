@@ -6,6 +6,7 @@ import DeleteX from '../../assets/icons/deleteX.svg'
 import TableList from './table';
 import {ModalAdd} from '../../components/Modal/ModalAdd/ModalAdd';
 import {SearchInputIcon} from '../../components/Search/Search';
+import {DrawerFilter} from '../../components/DrawerFilter/DrawerFilter';
 
 /**
 * @author
@@ -17,7 +18,7 @@ export const Dashboard
   = (props) => {
     const [needConfirm, setNeedConfirm] = React.useState('Cần xác nhận');
     const [openModalAdd, setOpenModalAdd] = React.useState(false);
-
+    const [openDrawerFilter, setOpenDrawerFilter] = React.useState(false);
     const handleChange = (event) => {
       setNeedConfirm(event.target.value);
     };
@@ -93,6 +94,7 @@ export const Dashboard
                   marginRight: '20px',
                   border: 'none'
                 }}
+                onClick={() => setOpenDrawerFilter(true)}
                 variant="primary" startIcon={<FilterAltOutlinedIcon color="primary" />}>
                 Bộ lọc
               </Button>
@@ -142,6 +144,12 @@ export const Dashboard
         <ModalAdd 
         open = {openModalAdd}
         onClose = {() => setOpenModalAdd(false)}
+        />
+
+        <DrawerFilter 
+        open={openDrawerFilter}
+        anchor='right'
+        setOpenDrawerFilter={setOpenDrawerFilter}
         />
       </div>
     )

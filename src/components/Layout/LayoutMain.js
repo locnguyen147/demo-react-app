@@ -1,12 +1,9 @@
 import React from 'react'
 import {Box, Collapse, List, ListItemButton, ListItemIcon, ListItemText, Table, TableBody, TableCell, TableRow} from '@mui/material';
 import {AppBarHeader} from '../../components/AppBar'
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
 import iconHouse from '../../assets/icons/iconHouse.svg'
-import iconArrowDown from '../../assets/icons/iconArrowDown.svg'
 /**
 * @author
 * @function LayoutMain
